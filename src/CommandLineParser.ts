@@ -107,6 +107,16 @@ export const argv: any = yargs.options({
         type: 'boolean',
         default: false,
         demandOption: false
+    },
+    bmeuser: {
+        alias: 'bu',
+        describe: 'BME Cimtar ID @bme.hu nelkul - destreamerBME',
+        type: 'string'
+    },
+    bmepasswd: {
+        alias: 'bp',
+        describe: 'BME Cimtar Jelszo - destreamerBME',
+        type: 'string'
     }
 })
 .wrap(120)

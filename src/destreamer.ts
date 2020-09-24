@@ -67,6 +67,13 @@ async function DoInteractiveLogin(url: string, username?: string): Promise<Sessi
             await page.waitForSelector('input[type="email"]', {timeout: 3000});
             await page.keyboard.type(username);
             await page.click('input[type="submit"]');
+            await page.waitFor(5000);
+            await page.type('#login-form_username', argv.bmeuser);
+            await page.waitFor(500);
+            await page.type('#login-form_password', argv.bmepasswd);
+            await page.click('input[type="submit"]');
+            await page.waitForNavigation();
+            await page.click('#idSIButton9');
         }
         else {
             /* If a username was not provided we let the user take actions that
